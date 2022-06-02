@@ -11,47 +11,49 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Repository.Conceate
 {
-    public class CityRepositroy : ICityRepositroycs
+    public class CountryRepositroy : ICountryRepositroy
     {
+
         public SqlConnection con;
 
-        public CityRepositroy()
+        public CountryRepositroy()
         {
             string constr = ConfigurationManager.ConnectionStrings["studentConnection"].ToString();
             con = new SqlConnection(constr);
         }
 
-        public  List<CityMaster> GetCityMasters()
+        public List<CountryMaster> GetCountryMasters()
         {
-            List<CityMaster> EmpList = new List<CityMaster>();
+
+            List<CountryMaster> EmpList = new List<CountryMaster>();
             DataTable dt = new DataTable();
-            SqlCommand com = new SqlCommand("Select * from CityMaster", con);
+            SqlCommand com = new SqlCommand("Select * from CountryMaster", con);
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
             con.Open();
             da.Fill(dt);
             con.Close();
 
-      
-                foreach (DataRow dr in dt.Rows)
-                {
 
-                    EmpList.Add(
+            foreach (DataRow dr in dt.Rows)
+            {
 
-                        new CityMaster
-                        {
+                EmpList.Add(
 
-                            CityID = Convert.ToInt32(dr["CityID"]),
-                            CityName = Convert.ToString(dr["CityName"]),
-                            
+                    new CountryMaster
+                    {
 
-                        }
-                        );
-                }
+                        CountryID = Convert.ToInt32(dr["CountryID"]),
+                        CountryName = Convert.ToString(dr["CountryName"]),
+                        
 
-            
+                    }
+                    );
+            }
 
-          
+
+
+
 
 
 
@@ -59,8 +61,6 @@ namespace StudentManagement.Repository.Conceate
 
 
             return EmpList;
-
         }
-       
     }
 }

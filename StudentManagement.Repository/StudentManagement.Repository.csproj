@@ -44,7 +44,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Conceate\CityRepositroy.cs" />
+    <Compile Include="Conceate\CountryRepositroy.cs" />
+    <Compile Include="Conceate\StateRespositroy.cs" />
     <Compile Include="Interface\ICityRepositroycs.cs" />
+    <Compile Include="Interface\ICountryRepositroy.cs" />
+    <Compile Include="Interface\IStateRespositroy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

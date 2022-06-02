@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concerate\CityService.cs" />
+    <Compile Include="Concerate\CountryService.cs" />
+    <Compile Include="Concerate\StateService.cs" />
+    <Compile Include="Interface\ICityService.cs" />
+    <Compile Include="Interface\ICountryService.cs" />
+    <Compile Include="Interface\IStateService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Concerate\" />
-    <Folder Include="Interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\StudentManagement.BussinessEntity\StudentManagement.BussinessEntity.csproj">
       <Project>{20c06735-589b-44e5-b1f2-2768e6e969f8}</Project>

@@ -11,47 +11,48 @@ using System.Threading.Tasks;
 
 namespace StudentManagement.Repository.Conceate
 {
-    public class CityRepositroy : ICityRepositroycs
+    public class StateRespositroy : IStateRespositroy
     {
+
         public SqlConnection con;
 
-        public CityRepositroy()
+        public StateRespositroy()
         {
             string constr = ConfigurationManager.ConnectionStrings["studentConnection"].ToString();
             con = new SqlConnection(constr);
         }
 
-        public  List<CityMaster> GetCityMasters()
+        public List<StateMaster> GetStateMasters()
         {
-            List<CityMaster> EmpList = new List<CityMaster>();
+            List<StateMaster> EmpList = new List<StateMaster>();
             DataTable dt = new DataTable();
-            SqlCommand com = new SqlCommand("Select * from CityMaster", con);
+            SqlCommand com = new SqlCommand("Select * from StateMaster", con);
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
             con.Open();
             da.Fill(dt);
             con.Close();
 
-      
-                foreach (DataRow dr in dt.Rows)
-                {
 
-                    EmpList.Add(
+            foreach (DataRow dr in dt.Rows)
+            {
 
-                        new CityMaster
-                        {
+                EmpList.Add(
 
-                            CityID = Convert.ToInt32(dr["CityID"]),
-                            CityName = Convert.ToString(dr["CityName"]),
-                            
+                    new StateMaster
+                    {
 
-                        }
-                        );
-                }
+                        StateId = Convert.ToInt32(dr["CityID"]),
+                        StateName = Convert.ToString(dr["CityName"]),
+                        CountryID = Convert.ToInt32(dr["CountryID"]),
 
-            
+                    }
+                    );
+            }
 
-          
+
+
+
 
 
 
