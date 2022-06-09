@@ -9,6 +9,6 @@ namespace StudentManagement.Controllers
 {
     public class RegistrationController : ApiController
     {
-        
+       public bool  
     }
 }
